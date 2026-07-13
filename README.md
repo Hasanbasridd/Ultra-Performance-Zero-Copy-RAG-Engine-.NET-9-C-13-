@@ -58,8 +58,8 @@ ModernAiAssistant.RagEngine/
 ### Installation & Execution
 1. Clone the repository:
 ```bash
-git clone https://github.com/Hasanbasridd/Ultra-Performance-Zero-Copy-RAG-Engine-.NET-9-C-13-.git
-cd Ultra-Performance-Zero-Copy-RAG-Engine-.NET-9-C-13-
+git clone https://github.com/Hasanbasridd/ZeroCopyRagEngine.git
+cd ZeroCopyRagEngine
 ```
 
 2. Activate the Cyber-Guard pre-commit hooks:
