@@ -1,0 +1,183 @@
+:root {
+    --bg-dark: #0a0a0c;
+    --glass-bg: rgba(20, 20, 25, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --accent: #00ffcc;
+    --text-main: #e0e0e0;
+    --text-muted: #888;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at 50% -20%, #1a1a2e 0%, var(--bg-dark) 50%);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.cockpit-container {
+    width: 90%;
+    max-width: 1000px;
+    height: 85vh;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+header {
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.2);
+}
+
+h1 {
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent);
+    animation: pulse 2s infinite;
+}
+
+.hardware-stats {
+    font-size: 11px;
+    color: var(--accent);
+    font-family: monospace;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.chat-area {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 16px 20px;
+    border-radius: 16px;
+    line-height: 1.5;
+    font-size: 15px;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.system-message {
+    align-self: center;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.user-message {
+    align-self: flex-end;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+}
+
+.ai-message {
+    align-self: flex-start;
+    background: rgba(0, 255, 204, 0.05);
+    border: 1px solid rgba(0, 255, 204, 0.1);
+    color: #fff;
+    border-bottom-left-radius: 4px;
+}
+
+.input-area {
+    padding: 20px 30px;
+    background: rgba(0,0,0,0.3);
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    gap: 15px;
+}
+
+input {
+    flex: 1;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    padding: 15px 25px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+button {
+    background: var(--text-main);
+    color: var(--bg-dark);
+    border: none;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; box-shadow: 0 0 5px var(--accent); }
+    50% { opacity: 1; box-shadow: 0 0 15px var(--accent); }
+    100% { opacity: 0.5; box-shadow: 0 0 5px var(--accent); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+}

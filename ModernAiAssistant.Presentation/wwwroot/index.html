@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cockpit UI - RAG Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cockpit-container">
+        <header>
+            <div class="status-indicator"></div>
+            <h1>ZERO-COPY RAG COCKPIT</h1>
+            <div class="hardware-stats">AVX-512 ACTIVE</div>
+        </header>
+
+        <div class="chat-area" id="chat-area">
+            <div class="message system-message">
+                Welcome to the High-Performance RAG Engine. System is ready.
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="query-input" placeholder="Enter command query..." autocomplete="off" />
+            <button id="send-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
